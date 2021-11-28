@@ -23,7 +23,10 @@ const folder = DriveApp.getFolderById("1eCb4t5CbryQ0MQPgKft2zkUQKM5s_jM5");
 // PDFに変換
 function CreatePDF() {
 
-  var url = "https://docs.google.com/spreadsheets/d/SSID/export?".replace("SSID", ssid);
+  var url = "https://docs.google.com/spreadsheets/d/"
+  +  ssid
+  + "/export?gid="
+  + shid;
 
 
   var opts = {
@@ -37,7 +40,7 @@ function CreatePDF() {
     pagenumbers:  "false",
     gridlines:    "false", 
     fzr:          "false",
-    gid:          ssid
+    // gid:          ssid
   };
 
   let url_ext = [];
